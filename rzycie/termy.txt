@@ -1,0 +1,32 @@
+%termy 
+Zad 1
+fu(a,X,f(g(Y))) fu(V,h(Z,V), f(V))
+
+V=a
+
+fu(a,X,f(g(Y))) fu(a,h(Z,a),f(a))
+
+X=h(Z,a)
+
+fu(a,h(Z,a),f(g(Y)) fu(a,h(Z,a),f(a))
+
+g(Y)!=a
+
+Zad 2
+fu(a,X,f(g(Y)))  fu(Y,f(Z),f(Z))
+Y=a
+fu(a,X,f(g(a))) fu(a,f(Z),f(Z))
+X=f(z)
+fu(a,f(Z),f(g(a))) fu(a,f(Z),f(Z))
+Z = g(a)
+fu(a,f(g(a)),f(g(a))) fu(a,f(g(a)),f(g(a)))
+
+Zad 3
+fu(f(X),Y,a) fu(f(g(y)), c, Z)
+X = g(Y)
+-,- 
+Z= a
+-,-
+Y=c
+-,-
+
