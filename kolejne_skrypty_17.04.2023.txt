@@ -1,0 +1,26 @@
+Objetnosc kula
+z uzyciem let in
+ob_kuli r = let a =4/3 
+                sz = r*r*r 
+             in a *pi *sz
+
+definicja where
+ob+kuli r=a*pi*sz
+          where a =4/3
+          sz = r*r*r
+bez definicji
+ob_kulir= 4/3*pi*r*r*r
+
+
+//To to nw czy dobre jak cos xD 
+Pole KOla
+bez def
+Pole_Kolo r= pi *r*r
+
+where
+Pole_kolo r= pi*k
+            where k = r*r
+
+let in
+Pole_kolo r= let sz=r*r
+            in pi*sz        

@@ -1,0 +1,61 @@
+%rownowaznosc logiczna
+
+row:: Bool->Bool->Bool
+row = xy= if x==y then true else false
+----------------------------------------------------------------------
+% Za pomoca straznikow
+
+row xy
+|x==y = true
+|otherwise = false
+----------------------------------------------------------------------
+Sprawdz przy pomocy straznikow, ktora liczbom calkowitym ujemnym przypisuje napis "liczba mniejsza od 0", liczbom z przedzialu <0,5> napis  "liczba z przedzialu od 0 do 5" a liczbom wiekszym niz 5 "liczba wieksza od 5"
+
+spr:: Integer -> String
+spr x
+|x>5 = "liczba wieksza niz 5"
+|x<0= "liczba mniejsza niz 0"
+|otherwise = "liczba z przedzialu 1 do 5"
+---------------------------------------------------------------------------
+--funckja wyzmaczakaca pierwszy drugi i trzeci element trojki uporzadkowanej
+first::(a,b,c)->a
+first(x,_,_)=x
+second::(a,b,c)->b
+second(_,y,_)=y
+third::(a,b,c)->c
+third(_,_,z)=z                  
+---------------------------------------------------------------------------
+%compare 2 argumentowa - porownuje argumnenty i zwraca LT EQ GT przy pomocy straznikow
+
+Ord - klasa typow gdzie zdefiniowane jest porownywanie
+
+compare :: Ord a => a-> a-> Ordering
+compare xy
+|x>y = GT
+|x<y= LT
+|otherwise = EQ
+-----------------------------------------------------------------------
+!!!!!!!!LISTY HASKEL!!!!!!!!!!!!!!!!!!
+[] :: [a]
+[2,4,5,6,7] :: [Int]
+["ania","basia"] :: [[Char]]
+[True,False,True] :: Bool
+[[],[2],[6,7]] :: [Integer]
+-------------------------------------------------------------------------
+: sluzy do konstrukcji listy dodaje element glowe do istniejacej listy
+++ konkatenacja list
+!! operator indeksowania wyznacza element listy o podanym numerze
+.. specyfikacja zasiegu listy
+--------------------------------------------------------------------------
+Na kolosie moze byc:
+(3+4*5:4:[6,[2],3])!!lenght[2,3,4]
+[23,4,6,[2],3]!!lenght[2,3,4]=[23,4,6,[2],3]!!3
+
+chuj tam
+
+
+
+
+
+
+
