@@ -1,0 +1,75 @@
+%22.05.2024 Deklaratywne
+
+%rekurencje na listach haskel
+----------------------------------------------------------------------------
+#kwadrat lista definicja rekurencyjna
+
+kwadrat x=x*x
+kwadrat_lista::[INT]->[INT]
+kwadrat_lista []=[]
+kwadrat_lista(x:xs)=(kwadrat x):(kwadrat_lista xs)
+----------------------------------------------------------------------------
+#lista mniejsza o 1 [4,3]=[3,2]
+
+lista_mniejsza_o1 x=x-1
+lista_mniejsza_o1:: [INT]->[INT]
+lista_mniejsza_o1 []=[]
+lista_mniejsza_01 (x:xs)= (mniejsza x):(lista_mniejsza_o1 xs)
+-----------------------------------------------------------------------------
+#lista_razy3 np.lista_razy3 [1,2]=[3,6]
+
+lista_razy3 = x=x*3
+lista_razy3:: [INT]->[INT]
+lista_razy3 []=[]
+lista_razy3 (x:xs)= (razy3 x):(lista_razy3 xs)
+-----------------------------------------------------------------------------
+#dlugosc lista %zwraca dlugosc listy
+
+dlugosc_listy::[INT]->[INT]
+dlugosc_lista []=0
+dlugosc_lista(x:t)=1+dlugosc_lista t
+-----------------------------------------------------------------------------
+#iloczyn_lista
+iloczyn_lista::[INT]->[INT]
+iloczyn_lista[x]=x
+iloczyn_lista (x:t)=x*iloczyn_lista t
+------------------------------------------------------------------------------
+Tego typu zad na kolosie bedzie 
+
+Dana jest nastepujaca definicja funkcji fun
+fun [] =5
+fun [x:y]=x-fun y
+
+a)okresl typ funkcji fun
+b) jaki bedzie wynik aplikacji funkcji fun do listy [10.7..2]
+2 to zasieg
+#odpowiedzi
+a) fun:: [INT]->[INT]
+b) [10,7,4]=10-fun[7,4]
+10-(7-fun[4])=10-(7-(4-5))=2
+------------------------------------------------------------------------------
+#zadanie 6
+
+Zdefinij nastepujace funkcje 
+ostatni-wybiera ostatni element listy
+usun_ostatni- usuwa ostatnin element listy
+
+na dwa sposoby(bez rekurencji) korzystajac z funkcji wbudowanych 
+
+ostatni::[INT]->INT
+ostatni xs=head(reverse xs)
+--------------------------------------------------------------------------
+#usun_ostatni
+usun_ostatni::[INT]->[INT]
+usun_ostatni xs=reverse(tail(reverse xs))
+---------------------------------------------------------------------------
+konkat [2,3] [4,5] = [2,3,4,5]
+
+konkat::[INT]->[INT]->[INT]
+konkat xs ys = xs++ys
+----------------------------------------------------------------------------
+konkat::[INT]->[INT]->[INT]
+konkatenacja [] l2=l2
+konkat(h:t) l2=h:(konkat t l2)
+
+

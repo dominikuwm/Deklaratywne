@@ -1,0 +1,94 @@
+HASKEL warunkowe definicje funkcji
+
+1. SPOSOB
+if...then...else
+if<warunek> then <true value> else<false value>
+
+abs::FLOAT->FLOAT
+abs x=if x<0 then (-x) else x
+--------------------------------------------------
+jak sie testuje
+abs 6 i wyjdzie
+--------------------------------------------------
+abs2 x
+|x<0=(-x)
+|otherwise =x
+---------------------------------------------------
+Jak zdefiniowac funkcje minimum ktora wylicza minimum dla 2 liczb rzeczywistych np argument 1 = 5 argument 2 jest 2 ma zwrocic 2
+---------------------------------------------------------------
+minimum::FLOAT->FLOAT->FLOAT
+minimum = xy=if x<y then x else y
+--------------------------------------
+testowanie:
+minimum 6 2
+minimum 0 -3
+----------------------------------------------------------------
+Definicja przy pomocy straznikow
+
+| <warunek1> = <wartosc1>
+|<warunnek2> = <wartosc2>
+..
+|<warunekN>=<wartoscN>           moze tez byc otherwise ;)
+
+przyklad:
+abs2 x
+|x<0=(-x)
+|otherwise=x
+-------------------------------------------------------------------
+minimum2 xy
+|x<y=x
+|otherwise=y
+---------------------------------------------------------------------
+sgn(x) = x>0 =1
+         x=0 =0
+         x<0 =-1
+------------------------------------------------------------------------
+sgn::FLOAT->FLOAT
+sgn x=if x>0 then 1 else if x<0 then -1 else 0
+------------------------------------------------------------------------
+Straznik:
+sgn2 x
+|x>0=1
+|x<0=(-1)
+|otherwise=0
+-----------------------------------------------------------------------
+3 Sposob def warunkowych
+case <wyrazenie> of <wzorzec1> -><wartosc1>
+                    <wzorzecN> -><wartoscN>
+-----------------------------------------------------------------------
+alternatywa wykluczajaca 
+10 1
+01 1
+00 0
+11 0
+----------------------------------------------------------------------
+albo_albo::(Bool,Bool)->Bool
+albo_albo (p,q) = case (p,q) of (True, True)->False
+                                (True, False)->True
+                                (False, True)->True
+                                (False, False)->False
+------------------------------------------------------------------------
+alternatywa wykluczajaca - if...then...else
+
+albo_albo2:: Bool->Bool->Bool
+albo_albo2 xy= if x==y then false else True
+-------------------------------------------------------------------------
+alternatywa wykluczajaca - straznik
+albo_albo3:: Bool->Bool->Bool
+albo_albo3 x y 
+|x==y =False
+|otherwise=True
+------------------------------------------------------------------------
+alternatywa wykluczajca przy pomocy and or i not 
+
+alt::Bool->Bool->Bool
+alt xy= x && not y|| not x && y
+----------------------------------------------------------------------
+Implikacja logiczna
+jak to zrobic mordo
+-------------------------------------------------------------------]
+if...then...else
+
+imp:: Bool->Bool->Bool
+imp:: xy = if x==True && y==False then false else True
+-----------------------------------------------------------------
